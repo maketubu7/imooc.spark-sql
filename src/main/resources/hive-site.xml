@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?><!--
+   Licensed to the Apache Software Foundation (ASF) under one or more
+   contributor license agreements.  See the NOTICE file distributed with
+   this work for additional information regarding copyright ownership.
+   The ASF licenses this file to You under the Apache License, Version 2.0
+   (the "License"); you may not use this file except in compliance with
+   the License.  You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
+-->
+<configuration>
+<!-- WARNING!!! This file is provided for documentation purposes ONLY!     -->
+<!-- WARNING!!! Any changes you make to this file will be ignored by Hive. -->
+<!-- WARNING!!! You must make your changes in hive-site.xml instead.       -->
+<property>
+  <name>hive.cli.print.header</name>
+  <value>true</value>
+</property>
+<property>
+  <name>hive.cli.print.current.db</name>
+  <value>true</value>
+</property>
+<property>
+    <name>hive.metastore.warehouse.dir</name>
+    <value>/user/apache_hive/warehouse</value>
+</property>
+<property>
+  <name>hive.fetch.task.conversion</name>
+  <value>minimal</value>
+  <description>
+    1. minimal : SELECT STAR, FILTER on partition columns, LIMIT only
+    2. more    : SELECT, FILTER, LIMIT only (TABLESAMPLE, virtual columns)
+  </description>
+</property>
+
+<property>
+  <name>javax.jdo.option.ConnectionURL</name>
+  <value>jdbc:mysql://make.spark.com:3306/apache_hive?createDatabaseIfNotExist=true</value>
+</property>
+<property>
+  <name>javax.jdo.option.ConnectionDriverName</name>
+  <value>com.mysql.jdbc.Driver</value>
+</property>
+<property>
+	<name>hive.server2.long.polling.timeout</name>
+	<value>5000</value>
+	</property>
+<property>
+  <name>hive.metastore.uris</name>
+    <value>thrift://make.spark.com:9083</value>
+</property>
+<property>
+  <name>javax.jdo.option.ConnectionUserName</name>
+  <value>root</value>
+</property>
+<property>
+  <name>javax.jdo.option.ConnectionPassword</name>
+  <value>123456</value>
+</property>
+
+<property>
+  <name>hive.metastore.schema.verification</name>
+  <value>false</value>
+</property>
+ <property>
+   <name>datanucleus.fixedDatastore</name>
+   <value>false</value>
+   </property>  
+<property>  
+<name>datanucleus.autoCreateSchema</name>   
+<value>true</value>
+</property>
+
+<property>  
+<name>datanucleus.autoCreateTables</name>   
+<value>true</value>
+</property>
+   
+<property>  
+<name>datanucleus.autoCreateColumns</name>  
+<value>true</value>
+</property>
+
+</configuration>
